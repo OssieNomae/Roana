@@ -8,12 +8,12 @@
   </p>
     <a href="https://github.com/OssieNomae/Roana">Github</a>
     ·
-    <a href="https://create.roblox.com/store/asset/16867958047/Blueprint">Creator Marketplace</a>
+    <a href="https://create.roblox.com/store/asset/133335131052891/Roana">Creator Marketplace</a>
   </p>
 </div>
 
 ## Installation
-### [Creator Marketplace 🖱️](https://create.roblox.com/store/asset/16867958047/Blueprint)
+### [Creator Marketplace 🖱️](https://create.roblox.com/store/asset/133335131052891/Roana)
 _The Creator Marketplace is the easiest way to install Roana. You'll get access to automatic updates and be able to use the plugin anywhere you have Roblox Studio installed._
 
 ### Manual Installation
