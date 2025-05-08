@@ -1,7 +1,7 @@
 <div align="center">
 <h1 align="center">Roana</h1>
   <p align="center">
-	a Roblox studio plugin that enhances user-defined function documentation with Tags and Limited Markdown
+	a Roblox Studio plugin that enhances user-defined function documentation with Tags and Limited Markdown
   </p>
   <p align="center">
 	Designed to work with Moonwave styled documentation
