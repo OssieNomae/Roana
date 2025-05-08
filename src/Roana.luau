@@ -1,6 +1,7 @@
 --[[
 	License: Licensed under the MIT License
 	Version: 1.0.0
+	Github: https://github.com/OssieNomae/Roana
 	Authors:
 		OssieNomae - 2025
 	Credits:
@@ -50,7 +51,7 @@ local Tags = Dependencies:WaitForChild("Tags")
 local TagModules = { -- everything with @string whatever
 	Deprecated = require(Tags:WaitForChild("Deprecated")),
 	Document = require(Tags:WaitForChild("Document")),
-	Param = require(Tags:WaitForChild("Param")),
+	Param = require(Tags:WaitForChild("Param")), -- Having multiple @param tags doesn't currently stack!
 	Return = require(Tags:WaitForChild("Return")),
 }
 
@@ -107,18 +108,6 @@ local function ParseMarkdown(Text: string)
 	-- Restore escaped sequences
 	Text = RestoreEscaped(Text)
 
-	return Text
-end
-
--- Process line breaks based on whitespace
-local function ProcessLineBreaks(Text: string)
-	-- Look for consecutive line breaks and preserve them (double line breaks)
-	Text = Text:gsub("<br>%s*<br>", "##KEEPBREAK##")
-	-- Remove line breaks with preceding whitespace and any trailing whitespace
-	Text = Text:gsub("%s+<br>%s*", " ")
-	-- Restore preserved line breaks
-	Text = Text:gsub("##KEEPBREAK##", "<br><br>")
-	
 	return Text
 end
 
@@ -199,7 +188,7 @@ ScriptEditorService:RegisterAutocompleteCallback(FUNCTION_AUTOCOMPLETE_NAME, 10,
 		
 		Comment = ParseForTags(Comment, Item)
 		Comment = ProcessCodeSample(Comment, Item)
-		Comment = ProcessLineBreaks(Comment)
+		Comment = Comment:gsub("<br>%s?$", "") -- remove trailing break
 		
 		-- Side Note: These aren't integral to the comment (?) but are nonetheless present in every comment
 		Item.documentation.value = `<p>{ParseMarkdown(Comment)}</p>`
