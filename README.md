@@ -4,7 +4,7 @@
 	a Roblox Studio plugin that enhances user-defined function documentation with Tags and Limited Markdown
   </p>
   <p align="center">
-	Designed to work with Moonwave styled documentation
+	Designed to work with <a href="https://github.com/evaera/moonwave">Moonwave</a> styled documentation
   </p>
     <a href="https://github.com/OssieNomae/Roana">Github</a>
     ·
